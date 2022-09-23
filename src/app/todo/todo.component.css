@@ -1,0 +1,40 @@
+.todo-item {
+    border: 1px solid #c2c1c1;
+    padding: 15px 15px 15px;
+    position: relative;
+    cursor: pointer;
+    transition: all .25s linear;
+}
+.todo-item__controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;    
+    user-select: none;
+    color: #c2c1c1;
+}
+
+.material-icons {
+    transition: all .15s linear;
+}
+.material-icons:hover {
+    color: #000;
+}
+
+.delete-button:hover {
+    color: #f51d1d
+}
+
+.favorite-button:hover {
+    color: yellow;
+}
+
+.favorite-button--active {
+    color: yellow;
+}
+
+.todo-item--completed {
+    color: #c2c1c1;
+    border: 1px solid #e1e0e0;
+    text-decoration: line-through;
+}

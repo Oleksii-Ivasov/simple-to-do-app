@@ -1,0 +1,10 @@
+<div class="todo-item" (click)="onTodoClicked()">
+    <div class="todo-item__text">
+     {{todo.text}}
+    </div>
+    <div class="todo-item__controls" (click)=$event.stopPropagation()>
+      <i #starIcon [ngClass]="{'favorite-button--active': todo.favorite}" class="material-icons favorite-button" (click)="onFavoriteClicked()">star</i>
+      <i class="material-icons" (click)="onEditClicked()">edit</i>
+      <i class="material-icons delete-button" (click)="onDeleteClicked()">delete</i>
+    </div>
+  </div>

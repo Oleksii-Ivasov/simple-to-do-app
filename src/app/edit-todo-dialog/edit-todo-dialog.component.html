@@ -1,0 +1,31 @@
+<h1 class="title">Edit Todo</h1>
+<div class="mat-dialog-content">
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <input
+      ngModel
+      #input
+      required
+      type="text"
+      class="input"
+      [ngModel]="todo.text"
+      name="text"
+      placeholder="Type your todo text here"
+    />
+    <div class="buttons">
+      <button
+        type="button"
+        class="cancel-button button"
+        (click)="closeDialog()"
+      >
+        Cancel
+      </button>
+      <button
+        [disabled]="!input.value"
+        type="submit"
+        class="save-button button"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>

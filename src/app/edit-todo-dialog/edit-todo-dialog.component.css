@@ -1,0 +1,33 @@
+.title {
+  font-weight: 400;
+}
+
+.cancel-button {
+  background-color: #edeaea;
+  color: #000;
+  border: none;
+  transition: all 0.25s linear;
+}
+
+.cancel-button:hover {
+  background-color: #dad9d9;
+}
+
+.button:hover {
+  background-color: #268942;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.title {
+  margin: 0 0 20px;
+}
+
+.input {
+  width: 97%;
+}

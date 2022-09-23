@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="title">Favorite Todos</h1>
+  <section class="todos-list">
+    <app-todo
+      *ngFor="let todo of todos | favorites"
+      [ngClass]="{ 'todo-item--completed': todo.completed }"
+      (todoClicked)="changeTodoState(todo)"
+      (editClicked)="editTodo(todo)"
+      (deleteClicked)="deleteTodo(todo)"
+      (favoriteClicked)="toggleFavoriteState(todo)"
+      [todo]="todo"
+    ></app-todo>
+  </section>
+  <div class="nav-button-wrapper">
+    <a class="button nav-button" routerLink="">Go back</a>
+  </div>
+</div>

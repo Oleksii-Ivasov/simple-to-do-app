@@ -1,0 +1,70 @@
+<div class="container">
+  <section class="heading">
+    <h1 class="title">ToDo List</h1>
+  </section>
+
+  <div class="add-todo">
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+      <h3 class="title add-todo__title">New Todo</h3>
+      <div class="add-todo__form">
+        <input
+          ngModel
+          #input
+          name="todoText"
+          required
+          type="text"
+          class="add-todo__input input"
+        />
+        <button [disabled]="!input.value" class="add-todo__button button">
+          Add Todo
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <section class="todos-list">
+    <app-todo
+      *ngFor="
+        let todo of todos
+          | radiobuttonFilter
+            : completedFilter
+            : activeFilter
+            : allFilter
+            : favoriteFilter;
+        index as idx
+      "
+      [ngClass]="{ 'todo-item--completed': todo.completed }"
+      (todoClicked)="changeTodoState(todo)"
+      (editClicked)="editTodo(todo)"
+      (deleteClicked)="deleteTodo(todo)"
+      (favoriteClicked)="toggleFavoriteState(todo)"
+      [todo]="todo"
+    ></app-todo>
+  </section>
+
+  <section class="filter">
+    <mat-radio-group class="filter-radio-buttons" aria-label="Select an option">
+      <mat-radio-button
+        (change)="onRadioButtonChange($event.value)"
+        value="favorite"
+        >Favorite</mat-radio-button
+      >
+      <mat-radio-button
+        (change)="onRadioButtonChange($event.value)"
+        value="completed"
+        >Completed</mat-radio-button
+      >
+      <mat-radio-button
+        (change)="onRadioButtonChange($event.value)"
+        value="active"
+        >Active</mat-radio-button
+      >
+      <mat-radio-button (change)="onRadioButtonChange($event.value)" value="all"
+        >All</mat-radio-button
+      >
+    </mat-radio-group>
+  </section>
+  <div class="nav-button-wrapper">
+    <a routerLink="favorite" class="nav-button button"> Go to favorites </a>
+  </div>
+</div>

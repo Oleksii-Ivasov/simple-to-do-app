@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.button {
+  padding:6px 16px;
+  background-color: #2ea44f;
+  /* border-radius: 6px; */
+  border: 1px solid #000;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .25s linear;
+}
+
+.input {
+  padding: 5px;
+  margin-right: 10px;
+  width: 70%;
+}
+
+.button[disabled] {
+  opacity: 0.5;
+  cursor:default;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.nav-button{
+  text-decoration: none;
+  background-color: #ececec;
+  color: #000;
+  transition: all .25s linear;
+}
+
+.nav-button:hover {
+  background: #e5e4e4;
+}
+
+.nav-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
